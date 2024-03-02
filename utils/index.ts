@@ -1,3 +1,5 @@
+import { CarProps } from "@/types";
+
 export async function fetchCars() {
     const headers = {
         'X-RapidAPI-Key': 'f0f6e2194dmsh16bc7d143d2b32ep1bb328jsnbfd6f455d839',
@@ -26,9 +28,9 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
     const rentalRatePerDay = basePricePerDay + mileageRate + ageRate;
   
     return rentalRatePerDay.toFixed(0);
-  };
+};
   
-  export const updateSearchParams = (type: string, value: string) => {
+export const updateSearchParams = (type: string, value: string) => {
     // Get the current URL search params
     const searchParams = new URLSearchParams(window.location.search);
   
@@ -39,4 +41,8 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
     const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
   
     return newPathname;
-  };
+};
+
+export const generateCardImageUrl = (car: CarProps, angle?:string)=> {
+  
+}
